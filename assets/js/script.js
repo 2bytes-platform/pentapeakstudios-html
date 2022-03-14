@@ -20,6 +20,18 @@ $(function () {
         $('body,html').scrollTop(_st);
     })
 
+    $('.header_menu_wrap').on('click','a',function (e) {
+        e.preventDefault();
+        var $this= $(this),
+            $target = $this.attr('href'),
+            _offsetTop = $($target).offset().top - ($('#header').height());
+        $('body,html').stop().animate({'scrollTop' : _offsetTop}, 600, function () {});
+        if($('body').hasClass('fixed')) {
+            $('body').removeClass('fixed').css('top','');
+            $(this).removeClass('open').siblings('.header_menu_wrap').removeClass('open');
+        }; 
+    });
+
     /* form file */
     $(".file_box input[type=file]").on('click',function(){
         $('.file_box').addClass('on');
@@ -114,7 +126,6 @@ function scrollAni() {
 		if (st + ($(window).height() - 50) > secPos[j]) {
 			$('.section_antmation').eq(j).addClass('on')
 		};
-        console.log(secPos[j], st + $(window).height() - 10)
 	};
     
 };

@@ -1,6 +1,19 @@
 @charset "utf-8";
 
 @font-face {
+    font-family: 'Jal_Haru';
+    font-style: normal;
+    font-weight: 500;
+    src: 
+        local('Jal_Haru'),
+        url('../fonts/Jal_Haru Medium.eot'),
+        url('../fonts/Jal_Haru Medium.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Jal_Haru Medium.woff2') format('x-woff2'),
+        url('../fonts/Jal_Haru Medium.woff') format('woff'),
+        url('../fonts/Jal_Haru Medium.ttf') format('truetype');
+}
+
+@font-face {
     font-family: 'NotoSansKR';
     font-style: normal;
     font-weight: 400;
@@ -235,8 +248,9 @@ common
 .form_control .select_box .btn_dropdown:disabled:after {opacity: .5;}
 .form_control .select_box .btn_dropdown:after {content: ""; display: block; position: absolute; right: 1.8rem; top: calc(50% - .8rem); width: 1.6rem; height: 1.6rem; background: url(../images/arrow_down.png) no-repeat center center; background-size: 100%;}
 .form_control .select_box .btn_dropdown.on {border-color: #956aca; box-shadow: 0 0 .8rem rgba(150, 106, 203, 0.6); outline: none;} /* shadow 효과 : box-shadow: 0 0 .8rem rgba(150, 106, 203, 0.6); */
-.form_control .select_box .dropdown_items {position: absolute; top: calc(100% + .4rem); left: 0; right: 0; padding: 2rem 4rem; border: 1px solid #d4d4d4; border-radius: 1rem; background: #fff; box-shadow: 0 .4rem .4rem rgba(0,0,0,.03); opacity: 0; visibility: hidden; transform: translateY(-3rem); transition: opacity .2s ease-in-out, visibility .2s ease-in-out, transform .2s ease-in-out; z-index: 10;}
-.form_control .select_box .dropdown_items button {display: block; width: 100%; padding: 0; height: 5rem; font-family: 'NotoSansKR'; font-size: 1.8rem; text-align: left; letter-spacing: -.09rem; border: 0; background: transparent;}
+.form_control .select_box .dropdown_items {position: absolute; top: calc(100% + .4rem); left: 0; right: 0; padding: 1rem 0; border: 1px solid #d4d4d4; border-radius: 1rem; background: #fff; box-shadow: 0 .4rem .4rem rgba(0,0,0,.03); opacity: 0; visibility: hidden; transform: translateY(-3rem); transition: opacity .2s ease-in-out, visibility .2s ease-in-out, transform .2s ease-in-out; z-index: 10;}
+.form_control .select_box .dropdown_items button {display: block; width: 100%; padding: 0 4rem; height: 6.8rem; font-family: 'NotoSansKR'; font-size: 1.8rem; text-align: left; letter-spacing: -.09rem; border: 0; background: transparent;}
+.form_control .select_box .dropdown_items .selected button {background: rgba(212, 212, 212, 0.3);}
 .form_control .select_box .btn_dropdown.on ~ .dropdown_items {opacity: 1; visibility: visible; transform: translateY(0);}
 .form_control .file_box {display: block; position: relative;}
 .form_control .file_box input[type=file] {overflow: hidden; position: absolute; width: 0; height: 0; opacity: 0; visibility: hidden;}
@@ -270,9 +284,11 @@ layout
 .header_menu_wrap {display: flex;}
 .header_menu_wrap .nav_list {display: flex;}
 .header_menu_wrap .nav_list li {padding: 0 1.4rem;}
-.header_menu_wrap .nav_list a {display: block; font-size: 1.8rem; line-height: 1.5; font-family: 'poppins'; font-weight: 500; letter-spacing: -.01rem;}
+.header_menu_wrap .nav_list a {display: block; font-size: 1.8rem; line-height: 1.5; font-family: 'poppins'; font-weight: 500; letter-spacing: -.01rem; transition: color .3s ease;}
+.header_menu_wrap .nav_list a:hover {color: #ff7839;}
 .header_menu_wrap .lang_area {margin-left: 7.6rem; margin-top: -.1rem;}
-.header_menu_wrap .btn_lang {display: inline-block; padding: 0; color: #444; font-family: 'poppins'; font-weight: 700; font-size: 2rem; line-height: 1.5;}
+.header_menu_wrap .btn_lang {display: inline-block; padding: 0; color: #444; font-family: 'poppins'; font-weight: 700; font-size: 2rem; line-height: 1.5; transition: color .3s ease;}
+.header_menu_wrap .btn_lang:hover {color: #ff7839;}
 .btn_open_menu {display: none;}
 #header .dim {display: none;}
 
@@ -324,10 +340,10 @@ contents
 .visual_wrap .btn_ani.btn_yellow .desplode-circle {animation: desplodeYellow 0.5s forwards;}
 .visual_wrap .figure_box [class^=figure_] {display: inline-block; position: absolute; background-position: center center; background-repeat: no-repeat; background-size: 100%; z-index: 10; transform: translateY(6rem);}
 .visual_wrap.section_antmation.on .figure_box [class^=figure_] {transform: translateY(0rem);}
-.visual_wrap .figure_box .figure_1 {right: 16rem; top: 7.5rem; width: 6.8rem; height: 7.3rem; background-image: url(../images/v_figure_triangle.png);}
-.visual_wrap .figure_box .figure_2 {right: 5rem; top: 3.8rem; width: 3.8rem; height: 3.8rem; background-image: url(../images/v_figure_circle.png);}
-.visual_wrap .figure_box .figure_3 {right: 7.5rem; top: 15rem; width: 3.2rem; height: 3.5rem; background-image: url(../images/v_figure_x.png);}
-.visual_wrap .figure_box .figure_4 {right: -15.5rem; top: 4.4rem; width: 11.1rem; height: 10.7rem; background-image: url(../images/v_figure_poly.png);}
+.visual_wrap .figure_box .figure_1 {right: 16rem; top: 7.5rem; width: 6.8rem; height: 7.3rem; background-image: url(../images/v_figure_triangle.png); transition-delay: .6s;}
+.visual_wrap .figure_box .figure_2 {right: 5rem; top: 3.8rem; width: 3.8rem; height: 3.8rem; background-image: url(../images/v_figure_circle.png); transition-delay: 1s;}
+.visual_wrap .figure_box .figure_3 {right: 7.5rem; top: 15rem; width: 3.2rem; height: 3.5rem; background-image: url(../images/v_figure_x.png); transition-delay: 1.4s;}
+.visual_wrap .figure_box .figure_4 {right: -15.5rem; top: 4.4rem; width: 11.1rem; height: 10.7rem; background-image: url(../images/v_figure_poly.png); transition-delay: 1.8s;}
 
  @keyframes explodeAqua {
    0% {
@@ -399,7 +415,7 @@ contents
  /* about */
  .section_about {overflow: hidden;}
  .section_about .h_title {margin-bottom: 3.8rem;}
- .section_about .desc {max-width: 82rem; margin: 0 auto; text-align: center; font-size: 1.8rem; line-height: 1.78; color: #333; font-family: 'NotoSansKR'; font-weight: 500; word-break: keep-all; letter-spacing: -.05rem;}
+ .section_about .desc {max-width: 82rem; margin: 0 auto; text-align: center; font-size: 1.8rem; line-height: 1.78; color: #333; font-family: 'Jal_Haru'; font-weight: 500; word-break: keep-all; letter-spacing: -.05rem;}
  .section_about .desc .color_primary_p {display: block; margin-top: 1rem;}
  .section_about .game_introduce {display: flex; position: relative; padding-top: 4rem; padding-bottom: 24rem;}
  .section_about .game_introduce .c_left,
@@ -412,7 +428,7 @@ contents
  .section_about .game_introduce .c_left .title_box .title  {color: #ff8154;}
  .section_about .game_introduce .c_right .title_box .title  {color: #53c8c1;}
  .section_about .game_introduce .text,
- .section_about .game_introduce .text {font-size: 1.7rem; line-height: 1.64; font-family: 'NotoSansKR'; font-weight: 500;}
+ .section_about .game_introduce .text {font-size: 1.7rem; line-height: 1.64; font-family: 'Jal_Haru'; font-weight: 500; letter-spacing: -.068rem;}
  .section_about .c_left [class^=polygon_],
  .section_about .c_right [class^=polygon_] {display: inline-block; position: absolute; z-index: 2;}
  .section_about .c_left .polygon_01 {left: 13rem; bottom: 1rem; width: 28.1rem; height: 27.3rem;}
@@ -445,12 +461,12 @@ contents
 .section_people .v_contents .desc ul {display: flex; flex-wrap: wrap; margin: 0 -3rem;}
 .section_people .v_contents .desc li {width: 25%; text-align: center; padding: 0 3rem;}
 .section_people .v_contents .desc li strong {display: block; margin-bottom: 2rem; font-size: 2.5rem; letter-spacing: -.05rem; line-height: 1.35; font-family: 'CookieRun'; font-weight: 700;}
-.section_people .v_contents .desc li .txt {margin: 0 auto; font-size: 1.8rem; line-height: 1.78; letter-spacing: -.15rem; word-break: keep-all; font-weight: 500; font-family: 'NotoSansKR';}
+.section_people .v_contents .desc li .txt {margin: 0 auto; font-size: 1.8rem; line-height: 1.78; letter-spacing: -.036rem; word-break: keep-all; font-weight: 500; font-family: 'Jal_Haru';}
 
 .section_people .office_area .title {display: block; margin-bottom: 1.8rem; text-align: center;}
 .section_people .office_area .title strong {display: inline-block; position: relative; padding-left: 5.8rem; font-size: 3.2rem; line-height: 1.375; letter-spacing: -.16rem; font-family: 'CookieRun'; font-weight: 400;}
 .section_people .office_area .title strong:before {content: ""; display: block; position: absolute; left: 0; top: -1.5rem; width: 4.2rem; height: 4.4rem; background: url(../images/arrow_right_bottom.png) no-repeat center top; background-size: 100%;}
-.section_people .office_area .desc {margin-bottom: 4.9rem; text-align: center; font-size: 1.8rem; line-height: 1.78; letter-spacing: -.15rem; font-family: 'NotoSansKR'; font-weight: 500;}
+.section_people .office_area .desc {margin-bottom: 4.9rem; text-align: center; font-size: 1.8rem; line-height: 1.78; letter-spacing: -.036rem; font-family: 'Jal_Haru'; font-weight: 500;}
 .section_people .office_area .list_items {overflow: hidden;}
 .section_people .office_area .list_items ul {display: flex; flex-wrap: nowrap; margin: 0 -1rem;}
 .section_people .office_area .list_items li {width: 33.33333%; padding: 0 1rem;}
@@ -458,7 +474,7 @@ contents
 .section_people .office_area .list_items li img {position: absolute; left: 0; top: 0; width: 100%; height: 100%; object-fit: cover;}
 
 .section_people .btn_area {margin-top: 7rem; text-align: center;}
-.section_people .btn_area .btn_ani_inner {width: 29.4rem; height: 6.2rem; line-height: 6.2rem; font-family: 'NotoSansKR'; font-weight: 500; font-size: 2.2rem; border-radius: 1.5rem;}
+.section_people .btn_area .btn_ani_inner {width: 29.4rem; height: 6.2rem; line-height: 6.5rem; font-family: 'Jal_Haru'; font-weight: 500; font-size: 2.2rem; border-radius: 1.5rem;}
 
 /* careers */
 .section_careers {padding: 0 0 12rem;}
@@ -467,7 +483,7 @@ contents
 .section_careers .jop_application_box {position: absolute; left: 100%; bottom: 2rem; margin-left: 2rem;}
 .section_careers .jop_application_box .txt {display: block; position: relative; margin-left: 1.8rem; margin-bottom: 1.1rem; padding-left: 2.7rem; color: #666; font-family: 'CookieRun'; font-weight: 700; font-size: 1.4rem; text-align: left; line-height: 1.35; white-space: nowrap;}
 .section_careers .jop_application_box .txt:before {content: ""; display: block; position: absolute; left: 0; top: 1.2rem; width: 2.3rem; height: 2.8rem; background: url(../images/arrow_curve_down.png) no-repeat center center; background-size: 100%;}
-.section_careers .jop_application_box .btn_blk {display: inline-block; height: 3.4rem; padding: 0 2.1rem; font-size: 1.4rem; line-height: 3.4rem; color: #fff; white-space: nowrap; border-radius: .8rem; background: #333;}
+.section_careers .jop_application_box .btn_blk {display: inline-block; height: 3.4rem; padding: 0 2.1rem; font-size: 1.4rem; line-height: 3.7rem; color: #fff; white-space: nowrap; border-radius: .8rem; background: #333; font-family: 'Jal_Haru'; font-weight: 500;}
 .section_careers .form_wrap {position: relative; min-height: 42rem;}
 .section_careers .form_box {position: relative; width: 100%; margin: 0 auto; z-index: 2;}
 
@@ -543,7 +559,7 @@ contents
 .section_contactus .form_group:not(:first-child),
 .section_contactus .check_box_wrap:not(:first-child) {margin-top: 2.4rem;}
 .section_contactus .btn_area {margin-top: 4.6rem; text-align: center;}
-.section_contactus .btn_area .btn_ani_inner {width: 24rem; height: 6.3rem; line-height: 6.3rem; font-size: 3rem; letter-spacing: -.02rem; font-family: 'NotoSansKR';}
+.section_contactus .btn_area .btn_ani_inner {width: 24rem; height: 6.3rem; line-height: 6.7rem; font-size: 3rem; letter-spacing: -.02rem; font-family: 'Jal_Haru'; font-weight: 500;}
 
 .section_bottom {position: relative; padding-bottom: 48.02%; background: url(../images/bg_bottom.png) no-repeat center top; background-size: cover;}
 .section_bottom .logo {position: absolute; left: 24.01%; top: 38.54%; width: 19rem; height: 4.4rem; margin-top: 1.4rem; background: url(../images/f_logo.svg) no-repeat center top; background-size: 100%;}
@@ -572,8 +588,8 @@ contents
     .form_control .select_box .btn_dropdown:disabled {color: rgba(51,51,51,.5);}
     .form_control .select_box .btn_dropdown:disabled:after {opacity: .5;}
     .form_control .select_box .btn_dropdown:after {right: 1.633rem; top: calc(50% - .665rem); width: 1.33rem; height: 1.33rem;}
-    .form_control .select_box .dropdown_items {top: calc(100% + .2rem); padding: 1rem 2rem;}
-    .form_control .select_box .dropdown_items button {height: 3rem; font-size: 1.6rem; letter-spacing: -.08rem;}
+    .form_control .select_box .dropdown_items {top: calc(100% + .2rem); padding: 1rem 0;}
+    .form_control .select_box .dropdown_items button {height: 4.4rem; padding: 0 2rem; font-size: 1.6rem; letter-spacing: -.08rem;}
     .form_control .file_box label {height: 4.6rem;}
     .form_group .unit {width: 3.8rem; line-height: 4.6rem; font-size: 1.6rem; letter-spacing: -.08rem;}
     .form_control .error {margin-top: 1rem; font-size: 1.2rem; line-height: 1; letter-spacing: -.06rem;}
@@ -614,10 +630,12 @@ contents
     .visual_wrap .v_title {margin-bottom: 6rem; font-size: 7rem;}
     .visual_wrap .visual_area .text_box {margin-bottom: 4.1rem; font-size: 8rem;}
     .visual_wrap .btn_ani {border-radius: 1.5rem;}
-    .visual_wrap .figure_box {display: none;}
+    .visual_wrap .figure_box .figure_1 {right: 33.5rem; top: -.9rem;}
+    .visual_wrap .figure_box .figure_2 {right: 22.7rem; top: -5rem;}
+    .visual_wrap .figure_box .figure_3 {right: 25.2rem; top: 6.2rem;}
+    .visual_wrap .figure_box .figure_4 {right: 2.2rem; top: -4.6rem;}
 
     /* about */
-    .section_about {}
     .section_about .h_title {margin-bottom: 6rem;}
     .section_about .desc {max-width: 72rem; font-size: 2.2rem; line-height: 2.27;}
     .section_about .desc .color_primary_p {margin: 3rem -5rem 0;}
@@ -720,15 +738,15 @@ contents
     /* form */  
     .form_wrap {padding: 3.5rem 2.8rem;}
     .form_wrap .f_title {margin-bottom: 1.8rem;}
-    .form_group {position: relative; flex-wrap: wrap;}
+    .form_group {position: relative; flex-wrap: wrap; max-width: 48rem; margin: 0 auto;}
     .form_group .form_control {width: 100%; max-width: 48rem;}
     .form_group .form_control + .form_control {margin-left: 0; margin-top: 1.5rem;}
     .form_control input {height: 4rem; border-radius: .5rem;}
     .form_control textarea {height: 21rem; border-radius: .5rem; font-size: 1.5rem;}
     .form_control .select_box .btn_dropdown {height: 4rem; padding: 0 2rem; font-size: 1.4rem; border-radius: .5rem;}
     .form_control .select_box .btn_dropdown:after {right: 1.3rem;}
-    .form_control .select_box .dropdown_items {padding: .75rem 1.5rem;}
-    .form_control .select_box .dropdown_items button {height: 3.5rem;}
+    .form_control .select_box .dropdown_items {padding: .5rem 0;}
+    .form_control .select_box .dropdown_items button {height: 3.5rem; font-size: 1.6rem;}
     .form_control .file_box label {height: 4rem;}
     .form_group .unit {width: 100%; max-width: 48rem; height: 3rem; line-height: 3rem; font-size: 1.4rem;}
     .form_control .error {position: absolute; left: 0; bottom: -3rem; margin-top: .5rem; font-size: 1.1rem; line-height: 2.27;}
@@ -798,6 +816,11 @@ contents
     .visual_wrap .visual_area .btn_area .btn_ani {margin: 0 1rem; border-radius: .75rem;}
     .visual_wrap .btn_ani .btn_ani_inner {width: 12rem; height: 2.7rem; line-height: 2.7rem; border-radius: .75rem; font-size: 1.3rem;}
 
+    .visual_wrap .figure_box .figure_1 {right: 14.2rem; top: -.4rem; width: 3.4rem; height: 3.65rem;}
+    .visual_wrap .figure_box .figure_2 {right: 9.5rem; top: -2.2rem; width: 1.9rem; height: 1.9rem;}
+    .visual_wrap .figure_box .figure_3 {right: 10.6rem; top: 2.8rem; width: 1.6rem; height: 1.75rem;}
+    .visual_wrap .figure_box .figure_4 {right: 1.1rem; top: -1.8rem; width: 5.5rem; height: 5.35rem;}
+
     /* about */
     .section_about {}
     .section_about .h_title {margin-bottom: 2rem;}
@@ -847,7 +870,7 @@ contents
     .section_people .office_area .list_items li {flex: none; width: 42rem;}
     .section_people .office_area .list_items li span {width: 100%; padding-bottom: 91.3%;}
     .section_people .btn_area {margin-top: 5rem;}
-    .section_people .btn_area .btn_ani_inner {width: 21rem; height: 5rem; line-height: 5rem; border-radius: .75rem; font-size: 1.9rem;}
+    .section_people .btn_area .btn_ani_inner {width: 21rem; height: 5rem; line-height: 5.4rem; border-radius: .75rem; font-size: 1.9rem;}
 
     /* careers */
     .section_careers {padding: 0 0 5.5rem;}
@@ -857,7 +880,7 @@ contents
     .section_careers .jop_application_box {display: inline-block; position: relative; left: auto; top: auto; right: auto; bottom: auto;}
     .section_careers .jop_application_box .txt {position: absolute; top: -2.5rem; left: -3.4rem; margin-left: 0; margin-bottom: 0; padding-left: 0; font-size: 1.2rem; letter-spacing: 0;}
     .section_careers .jop_application_box .txt:before {left: 1.3rem; top: calc(100% + .2rem); width: 1.45rem; height: 1.6rem; background: url(../images/arrow_curve_right_down.png) no-repeat center center; background-size: 100%;}
-    .section_careers .jop_application_box .btn_blk {height: 3rem; padding: 0 2.4rem; font-size: 1.1rem; line-height: 3rem; border-radius: .4rem;}
+    .section_careers .jop_application_box .btn_blk {height: 3rem; padding: 0 2.4rem; font-size: 1.1rem; line-height: 3.2rem; border-radius: .4rem;}
     .section_careers .form_wrap {display: flex; flex-direction: column; min-height: 33.5rem; padding: 3.5rem 3rem;}
     .section_careers .f_title {font-size: 1.9rem;}
     .section_careers .form_box {flex: 1;}
@@ -895,7 +918,7 @@ contents
     .section_contactus .form_group:not(:first-child),
     .section_contactus .check_box_wrap:not(:first-child) {margin-top: 1.5rem;}
     .section_contactus .btn_area {margin-top: 2rem;}
-    .section_contactus .btn_area .btn_ani_inner {width: 15rem; height: 4.5rem; line-height: 4.5rem; font-size: 1.8rem;}
+    .section_contactus .btn_area .btn_ani_inner {width: 15rem; height: 4.5rem; line-height: 4.8rem; font-size: 1.8rem;}
 
     .section_bottom .logo {left: 19.01%; top: 40.91%; width: 18.48%; height: auto; padding-bottom: 4.296%; margin: 0;}
 }
