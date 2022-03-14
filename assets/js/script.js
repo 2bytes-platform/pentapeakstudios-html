@@ -22,14 +22,17 @@ $(function () {
 
     $('.header_menu_wrap').on('click','a',function (e) {
         e.preventDefault();
+        if($('body').hasClass('fixed')) {
+            $('body').removeClass('fixed').css('top','');
+            $('.header_menu_wrap').removeClass('open');
+            $('.btn_open_menu').removeClass('open');
+            $('body,html').scrollTop(_st);
+        }; 
         var $this= $(this),
             $target = $this.attr('href'),
             _offsetTop = $($target).offset().top - ($('#header').height());
+
         $('body,html').stop().animate({'scrollTop' : _offsetTop}, 600, function () {});
-        if($('body').hasClass('fixed')) {
-            $('body').removeClass('fixed').css('top','');
-            $(this).removeClass('open').siblings('.header_menu_wrap').removeClass('open');
-        }; 
     });
 
     /* form file */
