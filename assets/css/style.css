@@ -941,6 +941,9 @@ contents
 }
 
 
-@media screen and (max-width:360px) {
+/* @media screen and (max-width:360px) {
     html {font-size: 9.5px;}
+} */
+@media screen and (max-width:380px) {
+    html {font-size: 9px;}
 }
