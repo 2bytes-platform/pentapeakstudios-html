@@ -90,28 +90,33 @@ $(function () {
 });
 
 var _wst = $(window).scrollTop();
+var ani1, ani2, ani3, ani4, _vh;
 $(window).on('scroll',function () {
+
+    scrollAni();
+    visAni()
     
     var _cst = $(window).scrollTop();
+    var _dh = $(document).height();
     var _hh = $('#header').outerHeight();
 
     if(_wst < _cst) {
         $('#header').addClass('invisible');
     }else if(_cst == 0) {
         $('#header').removeClass('invisible');
-    } else if(_cst >= $(document).height() - $(window).height() - 10) {
+    } else if(_cst >= _dh - _hh - 10) {
         $('#header').addClass('invisible');
     }else {
         $('#header').removeClass('invisible');
     }
     _wst = _cst;
- 
-    scrollAni();
 
 });
 
 $(window).on('resize',function () {
     scrollAni();
+    visAni()
+
 });
 
 
@@ -133,3 +138,20 @@ function scrollAni() {
     
 };
 
+function visAni() {
+    _vh = $('.visual_wrap').height()
+
+    $('.visual_area [class*=figure_]').removeAttr('style');
+    ani1 = parseInt($('.visual_area .figure_1').css('top')),
+    ani2 = parseInt($('.visual_area .figure_2').css('top')),
+    ani3 = parseInt($('.visual_area .figure_3').css('top')),
+    ani4 = parseInt($('.visual_area .figure_4').css('top'));
+
+    if($(window).scrollTop() > 0 && $(window).scrollTop() <= _vh + $('#header').outerHeight()) {
+        $('.visual_area .figure_1').css('top', ani1 + ($(window).scrollTop()/2.2))
+        $('.visual_area .figure_2').css('top', ani2 + ($(window).scrollTop()/2.5))
+        $('.visual_area .figure_3').css('top', ani3 + ($(window).scrollTop()/2.8))
+        $('.visual_area .figure_4').css('top', ani4 + ($(window).scrollTop()/3.2))
+    }
+
+}

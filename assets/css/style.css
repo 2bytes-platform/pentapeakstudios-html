@@ -249,8 +249,9 @@ common
 .form_control .select_box .btn_dropdown:after {content: ""; display: block; position: absolute; right: 1.8rem; top: calc(50% - .8rem); width: 1.6rem; height: 1.6rem; background: url(../images/arrow_down.png) no-repeat center center; background-size: 100%;}
 .form_control .select_box .btn_dropdown.on {border-color: #956aca; box-shadow: 0 0 .8rem rgba(150, 106, 203, 0.6); outline: none;} /* shadow 효과 : box-shadow: 0 0 .8rem rgba(150, 106, 203, 0.6); */
 .form_control .select_box .dropdown_items {position: absolute; top: calc(100% + .4rem); left: 0; right: 0; padding: 1rem 0; border: 1px solid #d4d4d4; border-radius: 1rem; background: #fff; box-shadow: 0 .4rem .4rem rgba(0,0,0,.03); opacity: 0; visibility: hidden; transform: translateY(-3rem); transition: opacity .2s ease-in-out, visibility .2s ease-in-out, transform .2s ease-in-out; z-index: 10;}
-.form_control .select_box .dropdown_items button {display: block; width: 100%; padding: 0 4rem; height: 6.8rem; font-family: 'NotoSansKR'; font-size: 1.8rem; text-align: left; letter-spacing: -.09rem; border: 0; background: transparent;}
-.form_control .select_box .dropdown_items .selected button {background: rgba(212, 212, 212, 0.3);}
+.form_control .select_box .dropdown_items button {display: block; width: 100%; padding: 0 4rem; height: 6.8rem; font-family: 'NotoSansKR'; font-size: 1.8rem; text-align: left; letter-spacing: -.09rem; border: 0; background-color: transparent; transition: background-color .3s ease;}
+.form_control .select_box .dropdown_items button:hover {background-color: rgba(212, 212, 212, 0.3);}
+/* .form_control .select_box .dropdown_items .selected button {background: rgba(212, 212, 212, 0.3);} */
 .form_control .select_box .btn_dropdown.on ~ .dropdown_items {opacity: 1; visibility: visible; transform: translateY(0);}
 .form_control .file_box {display: block; position: relative;}
 .form_control .file_box input[type=file] {overflow: hidden; position: absolute; width: 0; height: 0; opacity: 0; visibility: hidden;}
